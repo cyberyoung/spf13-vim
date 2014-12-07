@@ -1,12 +1,10 @@
-"syntax enable
-"set background=dark
-set number!
 set wrap
 colorscheme solarized
+let g:solarized_termtrans=1
+
 
 let g:signify_disable_by_default = 1
 
-"let g:pymode_rope_lookup_project = 0"
 
 
 " multi-encoding setting
@@ -45,3 +43,15 @@ if has("multi_byte")
 else
   echoerr "Sorry, this version of (g)vim was not compiled with multi_byte"
 endif
+
+"comment out lines
+"syntax enable
+"set number!
+"set background=dark
+"set pastetoggle=<f7>
+" let g:pymode_rope_lookup_project = 0
+"set wildignore+=.CFUserTextEncoding,.codeintel,.jmc,.proxyrc,.ssh,.vimrc,.bundles ,.DS_Store,.config,.jxrc,.pythonhist,.subversion,.vimrc,.local ,.ShadowsocksX,.cpan,.lesshst,.recentf,.swt,.vimswap ,.Trash,.cups,.local,.rnd,.tmux,.conf,.vimundo ,.Xauthority,.distlib,.m2,.ropeproject,.vagrant,.d,.vimviews ,.atom,.eclipse,.miaozhenrc,.screenrc,.vim,.xunlei,.lixian,.config ,.bash_history,.emacs,.d,.neocomplcache,.sh_history,.vimbackup,.xunlei,.lixian,.cookies ,.bash_profile,.gem,.npm,.slime,.viminfo,.zcompdump-李旸的MacBookPro-5,.0,.2 ,.bashrc,.gitconfig,.nutstore,.slime-history,.eld,.vimperator,.zsh-update ,.boot2docker,.idlerc,.oh-my-zsh,.spf13-vim-3,.vimrc,.zsh_history ,.cache,.ido,.last,.pip,.sqlite_history,.vimrc,.before,.zshrc
+"let g:ctrlp_custom_ignore = {
+"  \ 'dir':  '\v[\/]\.(atom|cache|config|git|hg|svn)$',
+"  \ 'file': '\v\.(exe|so|dll)$',
+"  \ }
