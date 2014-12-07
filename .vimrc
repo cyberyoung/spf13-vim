@@ -80,7 +80,7 @@
     " endif
     filetype plugin indent on   " Automatically detect file types.
     syntax on                   " Syntax highlighting
-    set mouse=a                 " Automatically enable mouse usage
+    set mouse=r                 " Automatically enable mouse usage
     set mousehide               " Hide the mouse cursor while typing
     scriptencoding utf-8
 
@@ -106,7 +106,7 @@
     set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
     set virtualedit=onemore             " Allow for cursor beyond last character
     set history=1000                    " Store a ton of history (default is 20)
-    set spell                           " Spell checking on
+    "set spell                           " Spell checking on
     set hidden                          " Allow buffer switching without saving
     set iskeyword-=.                    " '.' is an end of word designator
     set iskeyword-=#                    " '#' is an end of word designator
@@ -225,7 +225,7 @@
     set splitright                  " Puts new vsplit windows to the right of the current
     set splitbelow                  " Puts new split windows to the bottom of the current
     "set matchpairs+=<:>             " Match, to be used with %
-    set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
+    set pastetoggle=<F7>           " pastetoggle (sane indentation on pastes)
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
     " Remove trailing whitespaces and ^M chars
     " To disable the stripping of whitespace, add the following to your
@@ -416,6 +416,7 @@
     " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
     map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
+    noremap <silent> <F5> :set number!<CR>
 " }
 
 " Plugins {
