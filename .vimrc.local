@@ -1,6 +1,6 @@
 set wrap
-colorscheme solarized
-let g:solarized_termtrans=1
+"colorscheme solarized
+"let g:solarized_termtrans=1
 
 "Bundle
 let g:spf13_bundle_groups=['general', 'writing', 'neocomplcache', 'programming', 'ruby', 'python', 'javascript', 'html', 'misc',]
@@ -8,11 +8,11 @@ let g:signify_disable_by_default = 1
 UnBundle 'MarcWeber/vim-addon-mw-utils'
 UnBundle 'tomtom/tlib_vim'
 UnBundle 'tpope/vim-repeat'
-"UnBundle 'bling/vim-airline'
-"UnBundle 'bling/vim-bufferline'
 UnBundle 'osyo-manga/vim-over'
 UnBundle 'kana/vim-textobj-user'
 UnBundle 'kana/vim-textobj-indent'
+
+UnBundle 'honza/vim-snippets'
 
 
 " multi-encoding setting
