@@ -1,4 +1,9 @@
 set wrap
+
+nnoremap <buffer> <CR> 0ye<C-W>w:tag <C-R>"<CR>
+noremap <silent> <F11> <ESC><ESC>:hide previous <CR>
+noremap <silent> <F12> <Esc><Esc>:hide next<CR>
+
 "colorscheme solarized
 "let g:solarized_termtrans=1
 
@@ -11,6 +16,83 @@ UnBundle 'kana/vim-textobj-user'
 UnBundle 'kana/vim-textobj-indent'
 
 UnBundle 'honza/vim-snippets'
+
+
+"---------------------------------------
+" plugins
+"---------------------------------------
+
+"---------------------------------------
+"" c.vim
+"---------------------------------------
+let g:C_AuthorName      = 'cyberyoung'
+let g:C_AuthorRef       = 'Yang Li'
+let g:C_Email           = 'pku.liyang@gmail.com'
+let g:C_Company         = 'KISS'
+
+
+"---------------------------------------
+"" TagList
+"---------------------------------------
+map <leader>cd  :cd %:p:h<cr>
+map <Leader>tag <leader>cd:!ctags -R --fields=+lS<cr>
+set tags=tags;
+noremap <silent> <F10>  <Esc><Esc>:Tlist<CR>
+inoremap <silent> <F10>  <Esc><Esc>:Tlist<CR>
+
+let tlist_make_settings  = 'make;m:makros;t:targets'
+let tlist_qmake_settings = 'qmake;t:SystemVariables'
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+nmap tl :TlistToggle<CR>
+
+if has("autocmd")
+	" ----------  qmake : set file type for *.pro  ----------
+	autocmd BufNewFile,BufRead *.pro  set filetype=qmake
+endif " has("autocmd")
+
+"---------------------------------------
+"" Nerdtree
+"---------------------------------------
+"autocmd vimenter * NERDTree
+let g:NERDTree_title="[NERDTree]"
+function! NERDTree_Start()
+    exec 'NERDTree'
+endfunction
+function! NERDTree_IsValid()
+    return 1
+endfunction
+
+"---------------------------------------
+"" WinManager
+"---------------------------------------
+let g:winManagerWidth =50
+let g:winManagerWindowLayout = "FileExplorer,BufExplorer|TagList"
+"let g:winManagerWindowLayout = "NERDTree|TagList"
+nmap wm :WMToggle<cr>
+
+"---------------------------------------
+"" cscope
+"---------------------------------------
+:set cscopequickfix=s-,c-,d-,i-,t-,e-
+"nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+"nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+"nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+"nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
 
 
 " multi-encoding setting
@@ -61,3 +143,68 @@ endif
 "  \ 'dir':  '\v[\/]\.(atom|cache|config|git|hg|svn)$',
 "  \ 'file': '\v\.(exe|so|dll)$',
 "  \ }
+"------------------------
+"---miniBufferExplorer---
+"------------------------
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1
+
+"UnBundle 'scrooloose/nerdtree'
+"UnBundle 'altercation/vim-colors-solarized'
+"UnBundle 'spf13/vim-colors'
+"UnBundle 'tpope/vim-surround'
+"UnBundle 'spf13/vim-autoclose'
+"UnBundle 'kien/ctrlp.vim'
+"UnBundle 'tacahiroy/ctrlp-funky'
+"UnBundle 'kristijanhusak/vim-multiple-cursors'
+"UnBundle 'vim-scripts/sessionman.vim'
+"UnBundle 'matchit.zip'
+"UnBundle 'bling/vim-airline'
+"UnBundle 'bling/vim-bufferline'
+"UnBundle 'Lokaltog/vim-easymotion'
+"UnBundle 'jistr/vim-nerdtree-tabs'
+"UnBundle 'flazz/vim-colorschemes'
+"UnBundle 'mbbill/undotree'
+"UnBundle 'nathanaelkane/vim-indent-guides'
+"UnBundle 'vim-scripts/restore_view.vim'
+"UnBundle 'mhinz/vim-signify'
+"UnBundle 'tpope/vim-abolish.git'
+"UnBundle 'gcmt/wildfire.vim'
+"UnBundle 'taglist.vim'
+"UnBundle 'winmanager--Fox'
+"UnBundle 'scrooloose/syntastic'
+"UnBundle 'tpope/vim-fugitive'
+"UnBundle 'mattn/webapi-vim'
+"UnBundle 'mattn/gist-vim'
+"UnBundle 'scrooloose/nerdcommenter'
+"UnBundle 'tpope/vim-commentary'
+"UnBundle 'godlygeek/tabular'
+"UnBundle 'majutsushi/tagbar'
+"UnBundle 'mbbill/echofunc'
+"UnBundle 'Shougo/neocomplcache'
+"UnBundle 'Shougo/neosnippet'
+"UnBundle 'Shougo/neosnippet-snippets'
+"UnBundle 'c.vim'
+"UnBundle 'klen/python-mode'
+"UnBundle 'yssource/python.vim'
+"UnBundle 'python_match.vim'
+"UnBundle 'pythoncomplete'
+"UnBundle 'elzr/vim-json'
+"UnBundle 'groenewege/vim-less'
+"UnBundle 'pangloss/vim-javascript'
+"UnBundle 'briancollins/vim-jst'
+"UnBundle 'kchmck/vim-coffee-script'
+"UnBundle 'amirh/HTML-AutoCloseTag'
+"UnBundle 'hail2u/vim-css3-syntax'
+"UnBundle 'gorodinskiy/vim-coloresque'
+"UnBundle 'tpope/vim-haml'
+"UnBundle 'fatih/vim-go'
+"UnBundle 'wting/rust.vim'
+"UnBundle 'tpope/vim-markdown'
+"UnBundle 'spf13/vim-preview'
+"UnBundle 'tpope/vim-cucumber'
+"UnBundle 'cespare/vim-toml'
+"UnBundle 'quentindecock/vim-cucumber-align-pipes'
+"UnBundle 'saltstack/salt-vim'
