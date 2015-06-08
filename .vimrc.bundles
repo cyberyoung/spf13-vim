@@ -149,6 +149,8 @@
     " General Programming {
         if count(g:spf13_bundle_groups, 'programming')
             " Pick one of the checksyntax, jslint, or syntastic
+            Bundle "taglist.vim"
+            Bundle "winmanager--Fox"
             Bundle 'scrooloose/syntastic'
             Bundle 'tpope/vim-fugitive'
             Bundle 'mattn/webapi-vim'
@@ -158,6 +160,7 @@
             Bundle 'godlygeek/tabular'
             if executable('ctags')
                 Bundle 'majutsushi/tagbar'
+                Bundle 'mbbill/echofunc'
             endif
         endif
     " }
@@ -184,6 +187,12 @@
             Bundle 'Shougo/neosnippet'
             Bundle 'Shougo/neosnippet-snippets'
             Bundle 'honza/vim-snippets'
+        endif
+    " }
+
+    " C/C++ {
+        if count(g:spf13_bundle_groups, 'c')
+            Bundle 'c.vim'
         endif
     " }
 
