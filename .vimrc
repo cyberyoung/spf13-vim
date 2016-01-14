@@ -3,6 +3,7 @@ filetype off                  " required
 
 set number
 set hlsearch
+set autoread
 
 
 " set the runtime path to include Vundle and initialize
