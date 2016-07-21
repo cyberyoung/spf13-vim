@@ -110,11 +110,10 @@ let g:jedi#completions_command = "<C-N>"
 if has('python')
 py << EOF
 from os.path import expanduser
-home = expanduser("~")
-sys.path.insert(0, '%s/src/work/joudou/Backend/_9data/' %(home))
 import os.path
 import sys
-import vim
+home = expanduser("~")
+sys.path.insert(0, '%s/src/work/joudou/Backend/_9data/' %(home))
 if 'VIRTUAL_ENV' in os.environ:
     project_base_dir = os.environ['VIRTUAL_ENV']
     sys.path.insert(0, os.path.join(project_base_dir, 'lib', 'python%d.%d' % sys.version_info[:2], 'site-packages'))
